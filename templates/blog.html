@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+{% if id == "" %}
+    <h1 align="center">Build a Blog</h1>
+    {% if entries|length == 0 %}
+        <p>No entries yet</p>
+    {% else %}
+        {% for entry in entries %}
+            <form method="POST" action="/view-entry">
+                <a href="blog?id={{entry.id}}">{{entry.title}}</a>
+                <br>
+                {{entry.body}}
+            </form>
+            <hr>
+        {% endfor %}
+    {% endif %}
+{% else %}
+    <h1 align="center">{{entries.title}}</h1>
+    {{entries.body}}
+{% endif %}
+{% endblock %}
