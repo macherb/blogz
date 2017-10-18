@@ -1,9 +1,9 @@
 {% extends "base.html" %}
 
 {% block content %}
-<h1 align="center">Add a Blog Entry</h1>
+<h1>new post</h1>
 <form method='post'>
-    Title for your new blog:
+    title
     <br>
     <input type="text" name='title' />
     {% if error1 == "" %}
@@ -12,7 +12,7 @@
     <p class='error'>{{error1}}</p>
     {% endif %}
     <br>
-    Your new blog:
+    post
     <br>
     <textarea name='body'></textarea>
     {% if error2 == "" %}
@@ -21,7 +21,7 @@
     <p class='error'>{{error2}}</p>
     {% endif %}
     <br>
-    <input type="submit" value='Add Entry' />
+    <input type="submit" />
 </form>
 
 {% endblock %}
